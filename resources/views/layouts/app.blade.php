@@ -128,20 +128,21 @@
                             </div>
                         </div>
 
-                         <div class="card menu-card{{ request()->routeIs('users_management.index') ? ' active' : '' }}" style="border-radius: 8px; min-width: 150px;">
+                        <div class="card menu-card{{ request()->routeIs('users.index') ? ' active' : '' }}" style="border-radius: 8px; min-width: 150px;">
                             <div class="card-body p-2 text-center">
-                                    <a class="nav-link d-flex align-items-center justify-content-center" href="{{ route('users_management.index') }}">
-                                        <i class="bi bi-person me-2"></i> User Index
+                                    <a class="nav-link d-flex align-items-center justify-content-center" href="{{ route('users.index') }}">
+                                        <i class="bi bi-truck me-2"></i> User Index
                                     </a>
                             </div>
                         </div>
-                        <div class="card menu-card{{ request()->routeIs('users_management.create') ? ' active' : '' }}" style="border-radius: 8px; min-width: 150px;">
+                        <div class="card menu-card{{ request()->routeIs('users.create') ? ' active' : '' }}" style="border-radius: 8px; min-width: 150px;">
                             <div class="card-body p-2 text-center">
-                                    <a class="nav-link d-flex align-items-center justify-content-center" href="{{ route('users_management.create') }}">
+                                    <a class="nav-link d-flex align-items-center justify-content-center" href="{{ route('users.create') }}">
                                         <i class="bi bi-plus-square me-2"></i> User Create
                                     </a>
                             </div>
                         </div>
+
 
                     </div>
 
