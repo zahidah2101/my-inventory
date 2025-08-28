@@ -26,6 +26,7 @@ class VehicleFactory extends Factory
             'brand' => $faker->word(),
             'color' => $faker->word(),
             'license_plate' => $faker->unique()->bothify('??-###-??'),
+            'user_id' => \App\Models\User::inRandomOrder()->first()->id ?? \App\Models\User::factory(), // Assuming you have a User factory
         ];
     }
 }

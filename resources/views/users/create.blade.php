@@ -5,12 +5,12 @@
     <div class="position-relative mb-4" style="height:220px;">
         <img src="https://www.netsuite.co.uk/portal/assets/img/business-articles/inventory-management/social-inventory-list.jpg" alt="Inventory Header" class="w-100 h-100 object-fit-cover" style="object-fit:cover; border-radius:0;">
         <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center px-4" style="background:rgba(0,0,0,0.35);">
-            <h2 class="fw-bold text-white text-center">Create Inventory</h2>
+            <h2 class="fw-bold text-white text-center">Create User</h2>
             <nav aria-label="breadcrumb" class="mb-2 w-100 d-flex justify-content-center">
                 <ol class="breadcrumb bg-transparent p-0 m-0 justify-content-center">
                     <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-underline">Home</a></li>
                     <li class="breadcrumb-separator text-white px-2">/</li>
-                    <li class="breadcrumb-item"><a href="{{ route('inventories.index') }}" class="text-white text-decoration-underline">Inventories</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('users_management.index') }}" class="text-white text-decoration-underline">Users Management</a></li>
                     <li class="breadcrumb-separator text-white px-2">/</li>
                     <li class="breadcrumb-item active text-white" aria-current="page">Create</li>
                 </ol>
@@ -28,7 +28,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Inventory Create') }}</div>
+                <div class="card-header">{{ __('User Management Create') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="">
@@ -40,21 +40,35 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="price" name="price" required>
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="serial_no" class="form-label">Serial No</label>
-                            <input type="text" class="form-control" id="serial_no" name="serial_no" required>
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Create Inventory</button>
+                        <div class="mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="marital_status" class="form-label">Marital Status</label>
+                            <select class="form-select" id="marital_status" name="marital_status" required>
+                                <option value="">Select Marital Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create User Management</button>
                     </form> 
                 </div>
             </div>

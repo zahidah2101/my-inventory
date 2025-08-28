@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        //query all inventories from the table 'inventories' using model
-        $vehicles = Vehicle::all();
+        //query all vehicles from the table 'vehicles' using model
+        $vehicles = Vehicle::latest()->get(); //Collection of Vehicle objects
         //return to view with $vehicles (resources/view/vehicles/index.blade.php)
         return view('vehicles.index', compact('vehicles'));
     }
@@ -30,6 +35,7 @@ class VehicleController extends Controller
         $vehicle->brand = $request->brand;
         $vehicle->color = $request->color;
         $vehicle->license_plate = $request->license_plate;
+        $vehicle->user_id = auth()->user()->id; // Assuming user is authenticated
         $vehicle->save();
 
         //return to vehicle index

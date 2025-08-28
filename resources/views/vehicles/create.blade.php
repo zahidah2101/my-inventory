@@ -1,7 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid px-0">
+    <div class="position-relative mb-4" style="height:220px;">
+        <img src="https://static2.formnx.com/file/kr15781/1/1724942401-60801cda8fa75d562463cbc5-Blog-Article-removebg-preview.png" alt="Inventory Header" class="w-100 h-100 object-fit-cover" style="object-fit:cover; border-radius:0;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center px-4" style="background:rgba(0,0,0,0.35);">
+            <h2 class="fw-bold text-white text-center">Create Vehicle</h2>
+                 <nav aria-label="breadcrumb" class="mb-2 w-100 d-flex justify-content-center">
+                <ol class="breadcrumb bg-transparent p-0 m-0 justify-content-center">
+                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-underline">Home</a></li>
+                    <li class="breadcrumb-separator text-white px-2">/</li>
+                    <li class="breadcrumb-item"><a href="{{ route('vehicles.index') }}" class="text-white text-decoration-underline">Vehicles</a></li>
+                    <li class="breadcrumb-separator text-white px-2">/</li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Create</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <style>
+        .breadcrumb-separator {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+    </style>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

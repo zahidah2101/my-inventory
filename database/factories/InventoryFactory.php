@@ -26,7 +26,7 @@ class InventoryFactory extends Factory
             'quantity' => $faker->numberBetween(1, 100),
             'price' => $faker->randomFloat(2, 1, 1000),
             'serial_no' => $faker->unique()->bothify('SN-####-????'),
-            'user_id' => \App\Models\User::factory(), // Assuming you have a User factory
+            'user_id' => \App\Models\User::inRandomOrder()->first()->id ?? \App\Models\User::factory(),// Assuming you have a User factory
         ];
     }
 }

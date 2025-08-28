@@ -42,6 +42,7 @@ class InventoryController extends Controller
 
     public function show(Inventory $inventory) //Model Binding for inventory
     {
+        $this->authorize('view', $inventory);
         return view('inventories.show', compact('inventory'));
     }
 
