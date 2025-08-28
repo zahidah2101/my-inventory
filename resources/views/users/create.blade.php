@@ -1,7 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid px-0">
+    <div class="position-relative mb-4" style="height:220px;">
+        <img src="https://www.netsuite.co.uk/portal/assets/img/business-articles/inventory-management/social-inventory-list.jpg" alt="Inventory Header" class="w-100 h-100 object-fit-cover" style="object-fit:cover; border-radius:0;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center px-4" style="background:rgba(0,0,0,0.35);">
+            <h2 class="fw-bold text-white text-center">User Create</h2>
+            <nav aria-label="breadcrumb" class="mb-2 w-100 d-flex justify-content-center">
+                <ol class="breadcrumb bg-transparent p-0 m-0 justify-content-center">
+                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-underline">Home</a></li>
+                    <li class="breadcrumb-separator text-white px-2">/</li>
+                    <li class="breadcrumb-item"><a href="{{ route('users.index') }}" class="text-white text-decoration-underline">Users</a></li>
+                    <li class="breadcrumb-separator text-white px-2">/</li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Create</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -38,5 +54,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection

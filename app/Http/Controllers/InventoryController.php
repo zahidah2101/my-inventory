@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Inventory;
 use Illuminate\Http\Request;
+use App\Jobs\InventoryCreatedJob;
 
 class InventoryController extends Controller
 {
@@ -35,6 +36,8 @@ class InventoryController extends Controller
         $inventory->serial_no = $request->serial_no;
         $inventory->user_id = auth()->user()->id; // Assuming user is authenticated
         $inventory->save();
+
+        InventoryCreatedJob::dispatch($inventory);
 
         //return to inventory index
         return redirect('/inventories');
