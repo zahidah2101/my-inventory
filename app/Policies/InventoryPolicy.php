@@ -22,6 +22,7 @@ class InventoryPolicy
     public function view(User $user, Inventory $inventory): bool
     {
         return $user->id === $inventory->user_id;
+        
     }
 
     /**
@@ -35,17 +36,17 @@ class InventoryPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Inventory $inventory): bool
+    public function kemaskini(User $user, Inventory $inventory): bool
     {
-        return false;
+         return $user->id === $inventory->user_id;
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Inventory $inventory): bool
+    public function padam(User $user, Inventory $inventory): bool
     {
-        return false;
+        return $user->id === $inventory->user_id;
     }
 
     /**

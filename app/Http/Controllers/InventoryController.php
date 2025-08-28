@@ -48,6 +48,7 @@ class InventoryController extends Controller
 
     public function edit(Inventory $inventory) //Model Binding for inventory
     {
+        $this->authorize('kemaskini', $inventory);
         return view('inventories.edit', compact('inventory'));
     }
 
@@ -66,6 +67,7 @@ class InventoryController extends Controller
 
     public function destroy(Inventory $inventory)
     {
+        $this->authorize('padam', $inventory);
         // delete using model
         $inventory->delete();
 
